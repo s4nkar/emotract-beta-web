@@ -27,6 +27,17 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Base URL for serving static files
+STATIC_URL = 'static/'
+
+# Additional directories to look for static files
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # Directory for your project's static files
+]
+
+# Directory to collect all static files (used during `collectstatic`)
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
 
 # Application definition
 
@@ -78,12 +89,20 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
+DATABASES = { 
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',  # MySQL database engine
+        'NAME': 'emotract',         # Name of the database
+        'USER': 'root',              # MySQL username
+        'PASSWORD': '',          # MySQL password
+        'HOST': 'localhost',                  # Host (use '127.0.0.1' if localhost doesn't work)
+        'PORT': '3306',                       # Default MySQL port
+        # 'OPTIONS': {
+        #     'sql_mode': 'STRICT_TRANS_TABLES', # Optional: Ensures stricter SQL compliance
+        # },
     }
 }
+
 
 
 # Password validation
@@ -120,10 +139,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    BASE_DIR/ "static"
-]
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
