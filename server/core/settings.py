@@ -58,6 +58,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -91,15 +92,12 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = { 
     'default': {
-        'ENGINE': 'django.db.backends.mysql',  # MySQL database engine
-        'NAME': 'emotract',         # Name of the database
-        'USER': 'root',              # MySQL username
-        'PASSWORD': '',          # MySQL password
-        'HOST': 'localhost',                  # Host (use '127.0.0.1' if localhost doesn't work)
-        'PORT': '3306',                       # Default MySQL port
-        # 'OPTIONS': {
-        #     'sql_mode': 'STRICT_TRANS_TABLES', # Optional: Ensures stricter SQL compliance
-        # },
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'emotract',
+        'USER': 'root',
+        'PASSWORD': 'NLP_emotract',
+        'HOST': 'db',
+        'PORT': '3306',
     }
 }
 
@@ -148,6 +146,12 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
