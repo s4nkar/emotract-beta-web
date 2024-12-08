@@ -1,5 +1,18 @@
-version: '3'
+version: '3.8'
 services:
+
+# MySQL Database Service
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: NLP_emotract
+      MYSQL_DATABASE: emotract
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
   # Django Backend Service
   backend:
     build:
@@ -10,11 +23,12 @@ services:
       - "8000:8000"
     environment:
       - DB_HOST=db
-      - DB_NAME=mydb
+      - DB_NAME=emotract
       - DB_USER=root
-      - DB_PASSWORD=examplepassword
+      - DB_PASSWORD=NLP_emotract
     depends_on:
       - db
+    command: /wait-for-it.sh db:3306 -- python manage.py runserver 0.0.0.0:8000
 
   # React Frontend Service (User)
   user:
@@ -41,17 +55,20 @@ services:
       - backend
     command: [ "serve", "-s", "dist", "-l", "5174" ]  # Serve production build from dist folder
     working_dir: /app  # Set the working directory to /app
-
-  # MySQL Database Service
-  db:
-    image: mysql:8.0
+  
+  # PHPmyadmin Service
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: chatapp_nlp-phpmyadmin
     environment:
-      MYSQL_ROOT_PASSWORD: NLP_emotract
-      MYSQL_DATABASE: emotract
+      - PMA_HOST=db
+      - PMA_PORT=3306
+      - PMA_USER=root
+      - PMA_PASSWORD=NLP_emotract
     ports:
-      - "3306:3306"
-    volumes:
-      - db_data:/var/lib/mysql
+      - "8080:80"
+    depends_on:
+      - db
 
 volumes:
   db_data:

@@ -1,5 +1,9 @@
 FROM python:3.10-slim
 
+# Add wait-for-it.sh script into the container
+COPY wait-for-it.sh /wait-for-it.sh
+RUN chmod +x /wait-for-it.sh
+
 # Install required system dependencies (with MariaDB as the MySQL replacement)
 RUN apt-get update && apt-get install -y \
     pkg-config \
