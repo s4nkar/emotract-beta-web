@@ -1,0 +1,27 @@
+cd server
+py -m venv venv 
+./venv/scripts/activate
+pip install -r requirements.txt
+
+
+pip install djangorestframework
+py manage.py makemigrations --dry-run --verbosity 3
+py manage.py runserver
+py manage.py createsuperuser
+
+pip install coverage
+coverage run --omit='*/venv/*' manage.py test
+coverage html
+
+docker-compose up --build
+docker-compose down
+
+docker-compose logs backend
+docker-compose logs user
+docker-compose logs admin
+docker-compose logs db
+
+docker-compose exec user sh
+ps aux | grep vite
+
+pip freeze > requirements.txt
