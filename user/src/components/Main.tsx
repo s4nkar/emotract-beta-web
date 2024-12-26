@@ -1,6 +1,6 @@
 const Main = () => {
   return (
-    <div>
+    <div className="w-full bg-white">
         User Chat
     </div>
   )
