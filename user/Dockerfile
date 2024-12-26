@@ -1,30 +1,27 @@
-# Use an official Node.js runtime as a parent image
 FROM node:18-alpine
 
-# Set the working directory inside the container
 WORKDIR /app
 
-# Copy the package.json and package-lock.json (if present)
-# This step is separate to leverage Docker cache for faster builds
 COPY package.json package-lock.json* ./
-
-# Install dependencies (using npm install)
 RUN npm install
-
-# Install the `serve` package globally to serve the build
 RUN npm install -g serve
 
-# Copy the rest of the application code into the container
+COPY ./src ./src
+COPY package*.json ./
 COPY . .
 
-# Build the frontend application (usually for a production-ready app)
 RUN npm run build
 
-# Expose the port the app will run on (usually 5173 for Vite, adjust if necessary)
 EXPOSE 5173
+CMD ["npm", "run", "dev", "--", "--port", "5173"]
+# Build the frontend application (usually for a production-ready app)
+
+# Expose the port the app will run on (usually 5173 for Vite, adjust if necessary)
 
 # Start the app using the `serve` command, serving the production build
-CMD [ "serve", "-s", "dist", "-l", "5173" ]
+# CMD [ "serve", "-s", "dist", "-l", "5173" ]
+# CMD ["npm", "run", "dev"]
+
 
 
 
