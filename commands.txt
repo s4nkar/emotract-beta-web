@@ -1,3 +1,13 @@
+docker-compose up --build
+docker-compose down
+
+To run manual python commands: 
+docker ps
+docker exec -it <container_name_or_id> /bin/bash
+docker exec -it fbefe058dae8 /bin/bash
+
+
+
 cd server
 py -m venv venv 
 ./venv/scripts/activate
@@ -13,16 +23,8 @@ pip install coverage
 coverage run --omit='*/venv/*' manage.py test
 coverage html
 
-docker-compose up --build
-docker-compose down
 
 docker builder prune --all --force    //clear cache
-
-To run manual python commands: 
-docker ps
-docker exec -it <container_name_or_id> /bin/bash
-docker exec -it fbefe058dae8 /bin/bash
-
 
 
 docker-compose logs backend
