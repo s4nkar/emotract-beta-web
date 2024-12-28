@@ -9,7 +9,7 @@ function Header() {
         <div className="flex items-center w-[80%] bg-white h-20">
           <Input
             placeholder="Search contact, group, or message"
-            className="w-1/3 rounded ml-3 focus:outline-none text-gray-600"
+            className="w-[22%] rounded-2xl  ml-3 focus:outline-none text-gray-600"
           />
         </div>
         {/* Right Section */}
