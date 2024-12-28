@@ -1,7 +1,10 @@
-const Main = () => {
+import React from 'react'
+
+
+function Main() {
   return (
-    <div className="w-full bg-white">
-        User Chat
+    <div>
+
     </div>
   )
 }
