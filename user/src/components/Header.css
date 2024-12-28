@@ -1,16 +1,16 @@
+.custom-gradient{
+  background: linear-gradient(to right, #565bcf, #a4a7ef);
+}
 .chat-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px 20px;
     color: white;
     box-shadow: 0 2px 5px rgba(54, 45, 137, 0.341);
-    
   }
-  
-  .search-section {
-    display: flex;
-    align-items: center;
+  input:focus {
+    outline: none !important;
+    box-shadow: none !important;
   }
   
   .search-bar {
@@ -33,10 +33,6 @@
     align-items: center;
   }
   
-  .right-section {
-    display: flex;
-    align-items: center;
-  }
   .avatar {
     width: 40px;
     height: 40px;
@@ -46,20 +42,12 @@
     overflow: hidden; 
     object-fit: cover;
   }
-  
-  
-  .user-info {
-    display: flex;
-    align-items: center;
-  }
-  
-  .user-name h4 {
-    margin: 0;
-    font-size: 16px;
-  }
-  
+
   .user-status {
-    font-size: 12px;
     color: #9fdc91; /* Green for online status */
   }
   
+
+.custom-shape{
+  transform: rotateY(180deg) skew(40deg); /* Adjust the angle as needed */
+}
