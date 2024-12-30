@@ -14,7 +14,7 @@ const Aside = () => {
 
     return (
         <motion.div 
-        className="aside-bg flex flex-col h-full"
+        className="aside-bg flex flex-col h-screen "
         animate={{ width: isAsideOpen ? '170px' : '90px' }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
     >
