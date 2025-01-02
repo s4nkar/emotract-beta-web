@@ -1,5 +1,3 @@
-import React from "react";
-
 const ChatSection = () => {
   return (
     <div className="flex justify-center items-center w-full bg-gray-100 h-full ">
