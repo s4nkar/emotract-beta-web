@@ -1,13 +1,38 @@
-import './App.css'
-import Aside from './components/Aside'
-import Main from './components/Main'
-function App() {
-  return (
-    <div className='w-full h-screen flex'>
-      <Aside/>
-      <Main/>
-    </div>
-  )
-}
+import { RedirectToSignIn, SignedIn, SignedOut } from "@clerk/clerk-react";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
+import Home from "./components/Home";
+import Dashboard from "./components/Dashboard";
 
-export default App
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <>
+      <Route index element={<Home />} />
+      <Route
+        path="/dashboard"
+        element={
+          <>
+            <SignedIn>
+              <Dashboard />
+            </SignedIn>
+            <SignedOut>
+              <RedirectToSignIn />
+            </SignedOut>
+          </>
+        }
+      />
+    </>
+  )
+);
+
+export default function App() {
+  return (
+    <>
+      <RouterProvider router={router} />
+    </>
+  );
+}
