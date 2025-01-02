@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+.aside-bg{
+    background: linear-gradient(#565bcf, #a4a7ef);
+  }
+  
+  .contect-bg{
+    background: #e0e1ff;
+  }
 
 .custom-scroll::-webkit-scrollbar{
     width: 5px !important;

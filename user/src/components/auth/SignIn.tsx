@@ -1,6 +1,5 @@
-import "./Home.css";
 import { SignInButton } from "@clerk/clerk-react";
-const Home = () => {
+const SignIn = () => {
   return (
     <>
       <h1>Sign in with this button</h1>
@@ -9,4 +8,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default SignIn;

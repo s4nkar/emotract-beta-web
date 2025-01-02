@@ -5,19 +5,20 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import Home from "./components/Home";
-import Dashboard from "./components/Dashboard";
+import SignIn from "./components/auth/SignIn";
+import Home from "./pages/Home";
+import NotFound from "./components/not-found";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route index element={<Home />} />
+      <Route index element={<SignIn />} />
       <Route
-        path="/dashboard"
+        path="/home"
         element={
           <>
             <SignedIn>
-              <Dashboard />
+              <Home />
             </SignedIn>
             <SignedOut>
               <RedirectToSignIn />
@@ -25,6 +26,7 @@ const router = createBrowserRouter(
           </>
         }
       />
+      <Route path="*" element={<NotFound />} />
     </>
   )
 );
