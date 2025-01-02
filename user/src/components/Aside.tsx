@@ -13,11 +13,11 @@ const Aside = () => {
     setIsAsideOpen(!isAsideOpen);
   };
 
-  return (
-    <motion.div
-      className="aside-bg flex flex-col h-full"
-      animate={{ width: isAsideOpen ? "170px" : "90px" }}
-      transition={{ duration: 0.3, ease: "easeInOut" }}
+    return (
+        <motion.div 
+        className="aside-bg flex flex-col h-screen"
+        animate={{ width: isAsideOpen ? '170px' : '90px' }}
+        transition={{ duration: 0.3, ease: 'easeInOut' }}
     >
       <div className="h-1/2">
         <h2 className="text-white font-semibold text-center pt-2">Emotract</h2>
