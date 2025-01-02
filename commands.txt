@@ -1,0 +1,44 @@
+docker-compose up --build
+docker-compose up
+docker-compose down
+
+user: http://localhost:5173
+admin: http://localhost:5174
+backend: http://localhost:8000/
+db: http://localhost:8080/
+
+
+
+To run manual python commands: 
+docker ps
+docker exec -it <container_name_or_id> /bin/bash
+docker exec -it fbefe058dae8 /bin/bash
+
+cd server
+py -m venv venv 
+./venv/scripts/activate
+pip install -r requirements.txt
+
+
+pip install djangorestframework
+py manage.py makemigrations --dry-run --verbosity 3
+py manage.py runserver
+py manage.py createsuperuser
+
+pip install coverage
+coverage run --omit='*/venv/*' manage.py test
+coverage html
+
+
+docker builder prune --all --force    //clear cache
+
+
+docker-compose logs backend
+docker-compose logs user
+docker-compose logs admin
+docker-compose logs db
+
+docker-compose exec user sh
+ps aux | grep vite
+
+pip freeze > requirements.txt
