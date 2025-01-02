@@ -1,5 +1,5 @@
 // import { cn } from "@/lib/utils";
-import { ModeToggle } from "./mode-toggle";
+import { ModeToggle } from "../mode-toggle";
 import { Settings } from "lucide-react";
 import { Menu } from "lucide-react";
 import { useState } from "react";

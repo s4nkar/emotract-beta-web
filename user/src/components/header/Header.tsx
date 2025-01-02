@@ -1,5 +1,5 @@
 import "./Header.css";
-import { Input } from "./ui/input";
+import { Input } from "../ui/input";
 import { useClerk, UserButton } from "@clerk/clerk-react";
 
 function Header() {
