@@ -9,6 +9,9 @@ module.exports = {
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
+		backgroundImage: {
+        'aside-bg-horizontaly': 'linear-gradient(to left, #a4a7ef, #565bcf)',
+      },
   		colors: {}
   	}
   },
