@@ -1,9 +1,13 @@
 import "./Header.css";
 import { Input } from "./ui/input";
+import { useClerk, UserButton } from "@clerk/clerk-react";
+
 function Header() {
+
+  const { user }= useClerk();
   return (
       <header 
-        className="chat-header w-full h-20 custom-gradient" 
+        className="chat-header w-full h-20 custom-gradient z-10" 
         >
         {/* Search Section */}
         <div className="flex items-center w-[80%] bg-white h-20">
@@ -15,17 +19,17 @@ function Header() {
         {/* Right Section */}
         <div className="right-section pr-10 w-[20%] h-20 relative flex justify-end custom-gradient">
         <div className="bg-white h-20 w-20 custom-shape absolute left-[-35px]"></div>
-          <div className="flex items-center">
-            <img
-              src="https://png.pngtree.com/png-clipart/20200224/original/pngtree-cartoon-color-simple-male-avatar-png-image_5230557.jpg"
-              alt="User Avatar"
-              className="avatar"
-            />
-            <div className="user-name">
-              <h4 className="m-0 text-[16px]">Sankar Dev</h4>
-              <span className="text-[12px] user-status">Online</span>
+        <div className="flex justify-center items-center gap-2">
+        <div className="flex items-center">
+            <div className="user-name  flex flex-col justify-start items-start mt-0">
+              <h4 className="m-0 font-semibold text-[1rem]">{user?.fullName}</h4>
+              <span className="text-[.7rem] user-status mt-[-.4rem]">Online</span>
             </div>
           </div>
+          <div className="h-7 w-7 mr-2">
+            <UserButton />
+          </div>
+        </div>
         </div>
       </header>
   );

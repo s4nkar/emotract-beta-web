@@ -4,7 +4,6 @@ import { Settings } from "lucide-react";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { UserButton } from "@clerk/clerk-react";
 
 const Aside = () => {
   const [isAsideOpen, setIsAsideOpen] = useState(false);
@@ -22,9 +21,7 @@ const Aside = () => {
       <div className="h-1/2">
         <h2 className="text-white font-semibold text-center pt-2">Emotract</h2>
       </div>
-      <div className="h-1/2">
-        <UserButton />
-      </div>
+
       <div className="h-1/2 flex flex-col justify-end items-start pb-10 gap-7 relative">
         <span className="flex items-center w-full pl-7 gap-2">
           <Settings color="white" className="w-8 h-8" cursor="pointer" />
