@@ -10,3 +10,7 @@
 .contect-bg{
   background: #e0e1ff;
 }
+
+.custom-scroll{
+  display: none !important;
+}

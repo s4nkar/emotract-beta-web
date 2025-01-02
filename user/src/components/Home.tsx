@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <>
       <h1>Sign in with this button</h1>
-      <SignInButton mode="modal" forceRedirectUrl="/dashboard" />
+      <SignInButton  mode="modal" forceRedirectUrl="/dashboard" />
     </>
   );
 };
