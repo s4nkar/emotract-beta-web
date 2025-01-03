@@ -1,90 +1,181 @@
 const ChatSection = () => {
   return (
-    <div className="flex justify-center items-center w-full bg-gray-100 h-full ">
-      <div className="w-full h-full bg-white rounded-lg shadow-lg" style={{ }}>
+    <div className="flex justify-center items-center w-full bg-gray-100 h-full" style={{ height: "calc(100vh - 5rem)" }}>
+      <div className="w-full h-full bg-white rounded-lg shadow-lg">
         {/* Header */}
-        <div className="p-6 border-b flex items-center justify-between">
+        <div className="p-4 border-b flex items-center justify-between h-[15%]">
           <div className="flex items-center">
             <img
-              src="https://via.placeholder.com/60"
+              src="https://pbs.twimg.com/media/E8HSa0aUYAM1_xS.jpg"
               alt="User Avatar"
-              className="w-16 h-16 rounded-full"
+              className="w-10 h-10 rounded-full"
             />
-            <div className="ml-4">
-              <h3 className="text-2xl font-semibold">Username</h3>
-              <span className="text-green-500 text-lg">Online</span>
+            <div className="ml-3">
+              <h3 className="text-sm font-semibold text-gray-800">John Doe</h3>
+              <span className="text-green-500 text-xs">Online</span>
             </div>
           </div>
-          <div className="flex space-x-4">
-            <button className="w-10 h-10 flex justify-center items-center text-blue-600 text-2xl">
+          <div className="flex space-x-3">
+            <button className="w-8 h-8 flex justify-center items-center text-blue-600 text-xl">
               📹
             </button>
-            <button className="w-10 h-10 flex justify-center items-center text-blue-600 text-2xl">
+            <button className="w-8 h-8 flex justify-center items-center text-blue-600 text-xl">
               📞
             </button>
           </div>
         </div>
 
         {/* Chat Area */}
-        <div className="p-6 space-y-6 overflow-y-auto" style={{ maxHeight: "60vh" }}>
+        <div className=" flex-col p-4 h-[75%] overflow-y-scroll bg-red-700 overflow-hidden">
           {/* Message 1 */}
-          <div className="flex items-start">
+          <div className="flex items-start mb-4">
             <img
-              src="https://via.placeholder.com/60"
+              src="https://i.redd.it/062aatvsysja1.jpg"
               alt="User Avatar"
-              className="w-16 h-16 rounded-full"
+              className="w-8 h-8 rounded-full"
             />
-            <div className="ml-4 bg-gray-100 px-6 py-4 rounded-lg">
-              <p className="text-lg">Hello !</p>
-              <span className="text-gray-500 text-sm block text-right">12:44</span>
+            <div className="ml-2">
+              <div className="bg-gray-200 px-3 py-2 rounded-lg">
+                <p className="text-sm text-gray-800">Hello!</p>
+              </div>
+              <span className="text-gray-500 text-[0.7rem] ml-2">12:48</span>
             </div>
           </div>
 
           {/* Message 2 */}
-          <div className="flex items-end justify-end">
-            <div className="bg-blue-500 text-white px-6 py-4 rounded-lg">
-              <p className="text-lg">Hi, how are you?</p>
-              <span className="text-blue-200 text-sm block text-right">12:45</span>
+          <div className="flex items-end justify-end mb-4">
+            <div className="bg-blue-500 text-white px-3 py-2 rounded-lg max-w-xs">
+              <p className="text-sm">Hi, how are you?</p>
             </div>
+            <span className="text-gray-500 text-[0.7rem] ml-2 b">12:45</span>
           </div>
 
-          {/* Message 3 */}
-          <div className="flex items-start">
+          {/* Additional Messages */}
+          <div className="flex items-start mb-4">
             <img
-              src="https://via.placeholder.com/60"
+              src="https://i.redd.it/062aatvsysja1.jpg"
               alt="User Avatar"
-              className="w-16 h-16 rounded-full"
+              className="w-8 h-8 rounded-full"
             />
-            <div className="ml-4 bg-gray-100 px-6 py-4 rounded-lg">
-              <p className="text-lg">
-                ommbbb
-              </p>
-              <span className="text-gray-500 text-sm block text-right">12:48</span>
+            <div className="ml-2">
+              <div className="bg-gray-200 px-3 py-2 rounded-lg">
+                <p className="text-sm text-gray-800">What about you?</p>
+              </div>
+              <span className="text-gray-500 text-[0.7rem] ml-2">12:49</span>
             </div>
           </div>
 
-          {/* Message 4 */}
-          <div className="flex items-end justify-end">
-            <div className="bg-blue-500 text-white px-6 py-4 rounded-lg">
-              <p className="text-lg">
-                ommbbb
-              </p>
-              <span className="text-blue-200 text-sm block text-right">12:50</span>
+          <div className="flex items-end justify-end mb-4">
+            <div className="bg-blue-500 text-white px-3 py-2 rounded-lg max-w-xs">
+              <p className="text-sm">I'm good, thanks for asking!</p>
             </div>
+            <span className="text-blue-200 text-[0.7rem] ml-2">12:50</span>
           </div>
         </div>
 
+
+        <div className="flex items-start mb-4">
+            <img
+              src="https://i.redd.it/062aatvsysja1.jpg"
+              alt="User Avatar"
+              className="w-8 h-8 rounded-full"
+            />
+            <div className="ml-2">
+              <div className="bg-gray-200 px-3 py-2 rounded-lg">
+                <p className="text-sm text-gray-800">Hello!</p>
+              </div>
+              <span className="text-gray-500 text-[0.7rem] ml-2">12:48</span>
+            </div>
+          </div>
+
+
+          <div className="flex items-start mb-4">
+            <img
+              src="https://i.redd.it/062aatvsysja1.jpg"
+              alt="User Avatar"
+              className="w-8 h-8 rounded-full"
+            />
+            <div className="ml-2">
+              <div className="bg-gray-200 px-3 py-2 rounded-lg">
+                <p className="text-sm text-gray-800">Hello!</p>
+              </div>
+              <span className="text-gray-500 text-[0.7rem] ml-2">12:48</span>
+            </div>
+          </div>
+
+
+
+          <div className="flex items-start mb-4">
+            <img
+              src="https://i.redd.it/062aatvsysja1.jpg"
+              alt="User Avatar"
+              className="w-8 h-8 rounded-full"
+            />
+            <div className="ml-2">
+              <div className="bg-gray-200 px-3 py-2 rounded-lg">
+                <p className="text-sm text-gray-800">Hello!</p>
+              </div>
+              <span className="text-gray-500 text-[0.7rem] ml-2">12:48</span>
+            </div>
+          </div>
+
+
+          <div className="flex items-start mb-4">
+            <img
+              src="https://i.redd.it/062aatvsysja1.jpg"
+              alt="User Avatar"
+              className="w-8 h-8 rounded-full"
+            />
+            <div className="ml-2">
+              <div className="bg-gray-200 px-3 py-2 rounded-lg">
+                <p className="text-sm text-gray-800">Hello!</p>
+              </div>
+              <span className="text-gray-500 text-[0.7rem] ml-2">12:48</span>
+            </div>
+          </div>
+
+
+
+          <div className="flex items-start mb-4">
+            <img
+              src="https://i.redd.it/062aatvsysja1.jpg"
+              alt="User Avatar"
+              className="w-8 h-8 rounded-full"
+            />
+            <div className="ml-2">
+              <div className="bg-gray-200 px-3 py-2 rounded-lg">
+                <p className="text-sm text-gray-800">Hello!</p>
+              </div>
+              <span className="text-gray-500 text-[0.7rem] ml-2">12:48</span>
+            </div>
+          </div>
+
+
+          <div className="flex items-start mb-4">
+            <img
+              src="https://i.redd.it/062aatvsysja1.jpg"
+              alt="User Avatar"
+              className="w-8 h-8 rounded-full"
+            />
+            <div className="ml-2">
+              <div className="bg-gray-200 px-3 py-2 rounded-lg">
+                <p className="text-sm text-gray-800">Hello!</p>
+              </div>
+              <span className="text-gray-500 text-[0.7rem] ml-2">12:48</span>
+            </div>
+          </div>
+
         {/* Input Area */}
-        <div className="p-6 border-t flex items-center space-x-4">
+        <div className="p-4 border-t flex items-center space-x-3 h-[10%] ">
           <input
             type="text"
             placeholder="Type your message here..."
-            className="flex-grow px-6 py-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg"
+            className="flex-grow px-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
           />
-          <button className="text-blue-500 text-2xl">
+          <button className="text-blue-500 text-xl">
             😊
           </button>
-          <button className="text-blue-500 text-2xl">
+          <button className="text-blue-500 text-xl">
             ➡️
           </button>
         </div>
