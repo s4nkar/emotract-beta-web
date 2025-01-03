@@ -44,3 +44,5 @@ docker-compose exec user sh
 ps aux | grep vite
 
 pip freeze > requirements.txt
+
+git reflog
