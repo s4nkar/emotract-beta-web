@@ -16,10 +16,10 @@ export default defineConfig({
    strictPort: true,
   },
   server: {
-   port: 5173,
+   port: 5174,
    strictPort: true,
-   host: true,
-   origin: "http://0.0.0.0:5174",
+   host: '0.0.0.0',
+  //  origin: "http://0.0.0.0:5174",
   },
  });
 

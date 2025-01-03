@@ -5,7 +5,7 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import SignIn from "./components/auth/SignIn";
+import SignIn from "./pages/auth/SignIn";
 import Home from "./pages/Home";
 import NotFound from "./components/not-found";
 
