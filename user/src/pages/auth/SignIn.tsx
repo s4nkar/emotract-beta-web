@@ -1,8 +1,20 @@
-import { SignInButton } from "@clerk/clerk-react";
+import { SignInButton, useClerk } from "@clerk/clerk-react";
 import backgroundImage from '@/assets/signin/bg.png';
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 
 const SignIn = () => {
+  const { user } = useClerk(); // Check if the user is signed in
+  const navigate = useNavigate();
+  
+  useEffect(() => {
+    if (user) {
+      // Redirect to home page if the user is signed in
+      navigate('/home');
+    }
+  }, [user, navigate]);
+
   return (
     <div
     className="leading-normal tracking-normal text-indigo-400 bg-cover bg-fixed h-screen"
