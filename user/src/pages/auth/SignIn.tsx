@@ -1,6 +1,5 @@
 import { SignInButton } from "@clerk/clerk-react";
 import backgroundImage from '@/assets/signin/bg.png';
-import { Button } from "@/components/ui/button";
 
 
 const SignIn = () => {
