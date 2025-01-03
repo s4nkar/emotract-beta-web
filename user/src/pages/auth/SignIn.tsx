@@ -1,7 +1,5 @@
 import { SignInButton } from "@clerk/clerk-react";
 import backgroundImage from '@/assets/signin/bg.png';
-import macImage from '@/assets/signin/macbook.svg';
-import { Button } from "@/components/ui/button";
 
 
 const SignIn = () => {
@@ -38,9 +36,9 @@ const SignIn = () => {
           <p className="leading-normal text-base md:text-xl mb-8 text-center">
           Emotract is a cutting-edge chat application that combines seamless communication with advanced AI features.
           </p>
-          <Button className="bg-white hover:bg-white text-black w-20">
+          <span className="bg-white hover:bg-white text-black w-20 cursor-pointer text-center p-2 rounded-lg">
             <SignInButton mode="modal" forceRedirectUrl="/home" />
-          </Button>
+          </span>
         </div>
       </div>
 
