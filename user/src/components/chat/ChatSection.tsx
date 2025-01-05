@@ -2,7 +2,7 @@ import { Input } from "../ui/input";
 
 const ChatSection = () => {
   return (
-    <div className="flex flex-col justify-center items-center w-full pt-0 px-8" style={{ height: "calc(100vh - 5rem)" }}>
+    <div className="flex bg-white dark:bg-stone-950 flex-col justify-center items-center w-full pt-0 px-8" style={{ height: "calc(100vh - 5rem)" }}>
         {/* Header */}
         <div className="p-4 border-b flex items-center justify-between h-[15%] w-full">
           <div className="flex items-center">
@@ -12,7 +12,7 @@ const ChatSection = () => {
               className="w-10 h-10 rounded-full"
             />
             <div className="ml-3">
-              <h3 className="text-sm font-semibold text-gray-800">John Doe</h3>
+              <h3 className="text-sm font-semibold text-gray-800 dark:text-gray-200">John Doe</h3>
               <span className="text-green-500 text-xs">Online</span>
             </div>
           </div>

@@ -2,9 +2,9 @@ import { useState } from 'react'
 import Sidebar from './Sidebar';
 
 const Aside = () => {
-  const [sideMenuIsExpand, setSideMenuIsExpand] = useState(true);
+  const [sideMenuIsExpand, setSideMenuIsExpand] = useState(false);
   return (
-    <div className="relative min-h-screen md:flex">
+    <div className="relative min-h-screen md:flex z-10">
       {/* sidemenu */}
       <Sidebar setExpand={setSideMenuIsExpand} />
       {/* content */}
