@@ -20,7 +20,7 @@ function Header() {
         <div className="right-section pr-10 w-[20%] h-20 relative flex justify-end custom-gradient">
         <div className="bg-white h-20 w-20 custom-shape absolute left-[-35px]"></div>
         <div className="flex justify-center items-center gap-2">
-        <div className="flex items-center">
+        <div className="md:flex items-center hidden">
             <div className="user-name  flex flex-col justify-start items-start mt-0">
               <h4 className="m-0 font-semibold text-[1rem]">{user?.fullName}</h4>
               <span className="text-[.7rem] user-status mt-[-.4rem]">Online</span>
