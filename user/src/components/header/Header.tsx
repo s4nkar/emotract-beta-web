@@ -7,7 +7,7 @@ function Header() {
   const { user }= useClerk();
   return (
       <header 
-        className="chat-header w-full h-20 custom-gradient z-10" 
+        className="chat-header w-full h-20 custom-gradient z-1" 
         >
         {/* Search Section */}
         <div className="flex items-center w-[80%] bg-white h-20">

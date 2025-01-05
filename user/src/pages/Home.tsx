@@ -1,5 +1,5 @@
 import Header from "@/components/header/Header";
-import Aside from "../components/aside/Aside";
+import Aside  from "../components/aside/Aside";
 import ContactList from "@/components/contact/ContactList";
 import ChatSection from "@/components/chat/ChatSection";
 

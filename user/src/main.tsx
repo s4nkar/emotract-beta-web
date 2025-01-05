@@ -7,6 +7,7 @@ import App from "./App.tsx";
 import { ClerkProvider } from "@clerk/clerk-react";
 const { VITE_CLERK_PUBLISHABLE_KEY } = import.meta.env;
 const publishableKey = VITE_CLERK_PUBLISHABLE_KEY;
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 
 if (!publishableKey) {
   throw new Error("Key was not found");
@@ -14,10 +15,13 @@ if (!publishableKey) {
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <ThemeProvider defaultTheme="dark" storageKey="emotract-user-theme">
-      <ClerkProvider publishableKey={publishableKey} afterSignOutUrl="/">
-        <App />
-      </ClerkProvider>
-    </ThemeProvider>
+     <SidebarProvider>
+      <ThemeProvider defaultTheme="dark" storageKey="emotract-user-theme">
+        <ClerkProvider publishableKey={publishableKey} afterSignOutUrl="/">
+          <SidebarTrigger />
+          <App />
+        </ClerkProvider>
+      </ThemeProvider>
+    </SidebarProvider>
   </StrictMode>
 );
