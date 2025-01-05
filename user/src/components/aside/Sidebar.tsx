@@ -2,6 +2,9 @@ import { FC, useRef, useState } from "react";
 import SimpleBar from "simplebar-react";
 import "simplebar-react/dist/simplebar.min.css";
 import { sidebarStructure } from "@/components/aside/structure";
+import { useClerk } from "@clerk/clerk-react";
+import { Link } from "react-router-dom";
+
 
 interface SidebarProps {
   setExpand: (value: boolean) => void;
@@ -27,11 +30,13 @@ interface SidebarItemProps{
 }
 
 const Sidebar: FC<SidebarProps> = ({ setExpand }) => {
-  const username = "Miles Heizer";
-  const company = "Unilever";
-  const profilePic =
-    "https://img.mbiz.web.id/180x180/erp/R2p1IXoyVEpBMk01WOEAdaI3hHVlkuIg0wW5_pn-CJCKHSrA_n1-U1tfE7Bl5H4_4Z7AxgL0DPOmUCdPuCHHC5lWvMU5Ig3t1uDrkVN53MlWlnA";
-  const link = "/";
+  const { user }= useClerk();
+  console.log({user});
+  
+  const username = user?.fullName;
+  const company = "Online";
+  const profilePic = user?.imageUrl;
+  const link = "/user-profile";
 
   const [openedMenu, setOpenedMenu] = useState<MenuState>({});
   const [activeName, setActiveName] = useState("");
@@ -39,7 +44,7 @@ const Sidebar: FC<SidebarProps> = ({ setExpand }) => {
 
   const listRef = useRef<Record<string, HTMLUListElement | null>>({});
 
-  const [isExpand, setIsExpand] = useState(true);
+  const [isExpand, setIsExpand] = useState(false);
   const [isExpandOnHover, setIsExpandOnHover] = useState(false);
 
   const handleHoverExpand = (value: boolean) => {
@@ -351,8 +356,8 @@ const Sidebar: FC<SidebarProps> = ({ setExpand }) => {
         <SimpleBar style={{ height: "100%" }} autoHide>
           <div className="text-slate-500">
             <div className="my-8 flex flex-col items-center h-44 overflow-x-hidden">
-              <a
-                href={link}
+              <Link
+                to={link}
                 className={`text-center flex flex-col items-center justify-center`}
               >
                 <div
@@ -380,9 +385,9 @@ const Sidebar: FC<SidebarProps> = ({ setExpand }) => {
                 >
                   {company}
                 </div>
-              </a>
+              </Link>
             </div>
-
+              
             <div className="mt-3 mb-10 p-0">
               <ul className="list-none text-sm font-normal px-3">
               {sidebarStructure.map((item: SidebarItemProps, index: number) =>
