@@ -1,67 +1,21 @@
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react"
+import { useState } from 'react'
+import Sidebar from './Sidebar';
 
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarGroupLabel,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-} from "@/components/ui/sidebar"
-
-// Menu items.
-const items = [
-  {
-    title: "Home",
-    url: "#",
-    icon: Home,
-  },
-  {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
-  },
-  {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
-  },
-  {
-    title: "Search",
-    url: "#",
-    icon: Search,
-  },
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
-  },
-]
-
-export function Aside() {
+const Aside = () => {
+  const [sideMenuIsExpand, setSideMenuIsExpand] = useState(true);
   return (
-    <Sidebar>
-      <SidebarContent>
-        <SidebarGroup>
-          <SidebarGroupLabel>Application</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <a href={item.url}>
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </a>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-      </SidebarContent>
-    </Sidebar>
-)
+    <div className="relative min-h-screen md:flex">
+      {/* sidemenu */}
+      <Sidebar setExpand={setSideMenuIsExpand} />
+      {/* content */}
+      <div
+        className={`flex-1 min-h-screen mx-0 bg-slate-100 transition-all duration-300 ease-in-out ${
+          sideMenuIsExpand ? "md:ml-72" : "md:ml-20"
+        }`}
+      >
+      </div>
+    </div>
+  )
 }
+
+export default Aside
