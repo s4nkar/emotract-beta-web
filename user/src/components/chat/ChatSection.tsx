@@ -1,6 +1,8 @@
 import { Input } from "../ui/input";
 
 const ChatSection = () => {
+
+  
   return (
     <div className="flex bg-white dark:bg-stone-950 flex-col justify-center items-center w-full pt-0 px-8" style={{ height: "calc(100vh - 5rem)" }}>
         {/* Header */}
@@ -34,8 +36,8 @@ const ChatSection = () => {
               className="w-8 h-8 rounded-full"
             />
             <div className="ml-2">
-              <div className="bg-gray-200 px-3 py-2 rounded-lg">
-                <p className="text-sm text-gray-800">Hello!</p>
+              <div className="bg-gray-200 px-3 py-2 rounded-xl md:w-1/2 break-words ">
+                <p className="text-sm text-gray-800">Hello!fsjnfjhfihfiuhfidshfihdsiufufguyfygiaygfiugfdgfgfufgugigsdgfggfuis,lkffssfsfsdfdsfsffsdfsdfsdfsdfsd</p>
               </div>
               <span className="text-gray-500 text-[0.7rem] ml-2">12:48</span>
             </div>
@@ -43,10 +45,10 @@ const ChatSection = () => {
 
           {/* Message 2 */}
           <div className="flex items-end justify-end mb-4">
-            <div className="bg-blue-500 text-white px-3 py-2 rounded-lg max-w-xs">
+            <div className="bg-blue-500 text-white px-3 py-2 rounded-xl md:w-1/2 break-words">
               <p className="text-sm">Hi, how are you?</p>
             </div>
-            <span className="text-gray-500 text-[0.7rem] ml-2 b">12:45</span>
+            <span className="text-gray-500 text-[0.7rem] ml-2">12:48</span>
           </div>
 
           {/* Additional Messages */}
@@ -57,18 +59,20 @@ const ChatSection = () => {
               className="w-8 h-8 rounded-full"
             />
             <div className="ml-2">
-              <div className="bg-gray-200 px-3 py-2 rounded-lg">
-                <p className="text-sm text-gray-800">What about you?</p>
-              </div>
+            <div className="bg-gray-200 px-3 py-2 rounded-xl max-w-full md:max-w-md lg:max-w-lg break-words">
+              <p className="text-sm text-gray-800">
+                What about youjsbfhgfbhgdhsfdgshfgdfgdsfgdsygfysdgfydsugfuydsgfygfugugfgdfgugfusgfugufgufgugfgusdgufsgufgufgdsgfdsgfsdgfsguf?
+              </p>
+            </div>
               <span className="text-gray-500 text-[0.7rem] ml-2">12:49</span>
             </div>
           </div>
 
           <div className="flex items-end justify-end mb-4">
-            <div className="bg-blue-500 text-white px-3 py-2 rounded-lg max-w-xs">
+            <div className="bg-blue-500 text-white px-3 py-2 rounded-xl md:w-1/2 break-words">
               <p className="text-sm">I'm good, thanks for asking!</p>
             </div>
-            <span className="text-blue-200 text-[0.7rem] ml-2">12:50</span>
+            <span className="text-gray-500 text-[0.7rem] ml-2">12:48</span>
           </div>
         </div>  
           {/* Message 1 */}
