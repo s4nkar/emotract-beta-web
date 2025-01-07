@@ -4,7 +4,7 @@ import Sidebar from './Sidebar';
 const Aside = () => {
   const [sideMenuIsExpand, setSideMenuIsExpand] = useState(false);
   return (
-    <div className="relative min-h-screen md:flex z-10 ">
+    <div className="relative min-h-screen md:flex z-10 hidden">
       {/* sidemenu */}
       <Sidebar setExpand={setSideMenuIsExpand}  />
       {/* content */}

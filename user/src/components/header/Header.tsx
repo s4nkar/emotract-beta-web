@@ -11,12 +11,12 @@ function Header() {
         {/* Search Section */}
         <div className="flex items-center w-[80%] bg-white h-20">
           <Input
-            placeholder="Search contact, group, or message"
-            className="w-[22%] rounded-2xl  ml-3 focus:outline-none text-gray-600"
+            placeholder="Search contact or message"
+            className="w-1/3 rounded-2xl  ml-3 focus:outline-none text-gray-600 placeholder:line-clamp-1 placeholder:text-xs text-xs h-8"
           />
         </div>
         {/* Right Section */}
-        <div className="right-section pr-10 w-[20%] h-20 relative flex justify-end custom-gradient">
+        <div className="right-section pr-2 md:pr-10 w-[20%] h-20 relative flex justify-end custom-gradient">
         <div className="bg-white h-20 w-20 custom-shape absolute left-[-35px]"></div>
         <div className="flex justify-center items-center gap-2">
         {/* <div className="md:flex items-center hidden">
