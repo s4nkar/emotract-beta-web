@@ -31,8 +31,8 @@ const ChatSection = () => {
         </div>
         {/* Chat Area */}
          <div className="h-[75%] w-full py-4">
-          <ChatScreen position='left' id='1'/>
-          <ChatScreen position='right' id='2'/>
+          <ChatScreen position='left' />
+          <ChatScreen position='right' />
          </div>
 
         {/* Input Area */}
