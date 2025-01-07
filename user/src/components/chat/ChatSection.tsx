@@ -1,4 +1,6 @@
+import { Phone, SendHorizonal, Smile, Video } from "lucide-react";
 import { Input } from "../ui/input";
+import ChatScreen from "./ChatScreen";
 
 const ChatSection = () => {
 
@@ -19,64 +21,19 @@ const ChatSection = () => {
             </div>
           </div>
           <div className="flex space-x-3">
-            <button className="w-8 h-8 flex justify-center items-center text-blue-600 text-xl">
-              📹
+            <button className="w-9 h-9 flex justify-center items-center text-gray-500 text-xl">
+              <Video/>
             </button>
-            <button className="w-8 h-8 flex justify-center items-center text-blue-600 text-xl">
-              📞
+            <button className="w-9 h-9 flex justify-center items-center text-gray-500 text-xl">
+              <Phone/>
             </button>
           </div>
         </div>
         {/* Chat Area */}
-        <div className=" flex-col p-4 h-[70%] overflow-y-scroll  overflow-hidden w-full custom-scroll-chat-section">
-        <div className="flex items-start mb-4">
-            <img
-              src="https://i.redd.it/062aatvsysja1.jpg"
-              alt="User Avatar"
-              className="w-8 h-8 rounded-full"
-            />
-            <div className="ml-2">
-              <div className="bg-gray-200 px-3 py-2 rounded-xl md:w-1/2 break-words ">
-                <p className="text-sm text-gray-800">Hello!fsjnfjhfihfiuhfidshfihdsiufufguyfygiaygfiugfdgfgfufgugigsdgfggfuis,lkffssfsfsdfdsfsffsdfsdfsdfsdfsd</p>
-              </div>
-              <span className="text-gray-500 text-[0.7rem] ml-2">12:48</span>
-            </div>
-          </div>
-
-          {/* Message 2 */}
-          <div className="flex items-end justify-end mb-4">
-            <div className="bg-blue-500 text-white px-3 py-2 rounded-xl md:w-1/2 break-words">
-              <p className="text-sm">Hi, how are you?</p>
-            </div>
-            <span className="text-gray-500 text-[0.7rem] ml-2">12:48</span>
-          </div>
-
-          {/* Additional Messages */}
-          <div className="flex items-start mb-4">
-            <img
-              src="https://i.redd.it/062aatvsysja1.jpg"
-              alt="User Avatar"
-              className="w-8 h-8 rounded-full"
-            />
-            <div className="ml-2">
-            <div className="bg-gray-200 px-3 py-2 rounded-xl max-w-full md:max-w-md lg:max-w-lg break-words">
-              <p className="text-sm text-gray-800">
-                What about youjsbfhgfbhgdhsfdgshfgdfgdsfgdsygfysdgfydsugfuydsgfygfugugfgdfgugfusgfugufgufgugfgusdgufsgufgufgdsgfdsgfsdgfsguf?
-              </p>
-            </div>
-              <span className="text-gray-500 text-[0.7rem] ml-2">12:49</span>
-            </div>
-          </div>
-
-          <div className="flex items-end justify-end mb-4">
-            <div className="bg-blue-500 text-white px-3 py-2 rounded-xl md:w-1/2 break-words">
-              <p className="text-sm">I'm good, thanks for asking!</p>
-            </div>
-            <span className="text-gray-500 text-[0.7rem] ml-2">12:48</span>
-          </div>
-        </div>  
-          {/* Message 1 */}
-          
+         <div className="h-[75%] w-full py-4">
+          <ChatScreen position='left' />
+          <ChatScreen position='right' />
+         </div>
 
         {/* Input Area */}
         <div className="p-4 border-t flex items-center space-x-3 h-[10%] w-full">
@@ -85,11 +42,11 @@ const ChatSection = () => {
             placeholder="Type your message here..."
             className="flex-grow border-none px-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
           />
-          <button className="text-blue-500 text-xl">
-            😊
+          <button className="text-gray-500 text-xl">
+            <Smile/>
           </button>
-          <button className="text-blue-500 text-xl">
-            ➡️
+          <button className="text-gray-500 text-xl">
+            <SendHorizonal/>
           </button>
         </div>
     </div>

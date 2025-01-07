@@ -1,40 +1,65 @@
+import { Settings, MessageCircleIcon, Phone, Star, BoxIcon } from "lucide-react";
+import { LucideProps } from "lucide-react";
+
 interface SidebarItemProps{
     id: string;
     title: string;
     name: string;
     parent?: boolean;
-    icon: string;
+    icon: string | React.ForwardRefExoticComponent<Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>>;
     link: string;
     child?: SidebarItemProps[]; 
     height: string;
 }
 
+
+const sidebarStructureBottom:SidebarItemProps[]  = [
+  {
+    id: "Starred messags",
+    title: "Starred messags",
+    name: "Starred messags",
+    parent: true,
+    icon: Star,
+    link: "/starred-messags",
+    height:"0px"
+  },
+  {
+    id: "Archeived chats",
+    title: "Archeived chats",
+    name: "Archeived chats",
+    parent: true,
+    icon: BoxIcon,
+    link: "/archeived-chats",
+    height:"0px"
+  },
+  {
+    id: "settings",
+    title: "Settings",
+    name: "Settings",
+    parent: true,
+    icon: Settings,
+    link: "/settings",
+    height:"0px"
+  },
+]
+
 const sidebarStructure:SidebarItemProps[]  = [
     {
-      id: "dashboard",
-      title: "Dasbor",
-      name: "dasbor",
+      id: "Chats",
+      title: "Chats",
+      name: "Chats",
       parent: true,
-      icon: "dasbor",
-      link: "/dashboard",
+      icon: MessageCircleIcon,
+      link: "/Chats",
       height:"0px"
     },
     {
-      id: "dashboard",
-      title: "Dasbor",
-      name: "dasbor",
+      id: "Calls",
+      title: "Calls",
+      name: "Calls",
       parent: true,
-      icon: "dasbor",
-      link: "/dashboard",
-      height:"0px"
-    },
-    {
-      id: "dashboard",
-      title: "Dasbor",
-      name: "dasbor",
-      parent: true,
-      icon: "dasbor",
-      link: "/dashboard",
+      icon: Phone,
+      link: "/Calls",
       height:"0px"
     },
     // {
@@ -239,5 +264,5 @@ const sidebarStructure:SidebarItemProps[]  = [
     // }
   ];
   
-  export { sidebarStructure };
+  export { sidebarStructure, sidebarStructureBottom };
   
