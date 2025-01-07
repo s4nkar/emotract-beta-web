@@ -1,3 +1,4 @@
+import { Phone, SendHorizonal, Smile, Video } from "lucide-react";
 import { Input } from "../ui/input";
 import ChatScreen from "./ChatScreen";
 
@@ -20,18 +21,18 @@ const ChatSection = () => {
             </div>
           </div>
           <div className="flex space-x-3">
-            <button className="w-8 h-8 flex justify-center items-center text-blue-600 text-xl">
-              📹
+            <button className="w-9 h-9 flex justify-center items-center text-gray-500 text-xl">
+              <Video/>
             </button>
-            <button className="w-8 h-8 flex justify-center items-center text-blue-600 text-xl">
-              📞
+            <button className="w-9 h-9 flex justify-center items-center text-gray-500 text-xl">
+              <Phone/>
             </button>
           </div>
         </div>
         {/* Chat Area */}
          <div className="h-[75%] w-full py-4">
-          <ChatScreen position='left'/>
-          <ChatScreen position='right'/>
+          <ChatScreen position='left' id='1'/>
+          <ChatScreen position='right' id='2'/>
          </div>
 
         {/* Input Area */}
@@ -41,11 +42,11 @@ const ChatSection = () => {
             placeholder="Type your message here..."
             className="flex-grow border-none px-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
           />
-          <button className="text-blue-500 text-xl">
-            😊
+          <button className="text-gray-500 text-xl">
+            <Smile/>
           </button>
-          <button className="text-blue-500 text-xl">
-            ➡️
+          <button className="text-gray-500 text-xl">
+            <SendHorizonal/>
           </button>
         </div>
     </div>

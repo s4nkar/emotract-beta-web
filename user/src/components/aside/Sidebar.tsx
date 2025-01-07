@@ -6,11 +6,8 @@ import { useClerk } from "@clerk/clerk-react";
 import { Link } from "react-router-dom";
 import { LucideProps } from "lucide-react";
 import React, { ForwardRefExoticComponent, RefAttributes } from 'react';
+import { useToggle } from '@/hooks/useToggle';
 
-
-interface SidebarProps {
-  setExpand: (value: boolean) => void;
-}
 
 interface MenuState {
     [key: string]: {
@@ -31,10 +28,11 @@ interface SidebarItemProps{
     height: string;
 }
 
-const Sidebar: FC<SidebarProps> = ({ setExpand }) => {
+const Sidebar: FC = () => {
+  const { toggleSideMenu, handleHoverExpand, isExpandOnHover, sideMenuIsExpand } = useToggle();
   const { user }= useClerk();
-  console.log({user});
-  
+
+
   const username = user?.fullName;
   const company = "Online";
   const profilePic = user?.imageUrl;
@@ -46,18 +44,15 @@ const Sidebar: FC<SidebarProps> = ({ setExpand }) => {
 
   const listRef = useRef<Record<string, HTMLUListElement | null>>({});
 
-  const [isExpand, setIsExpand] = useState(false);
-  const [isExpandOnHover, setIsExpandOnHover] = useState(false);
-
-  const handleHoverExpand = (value: boolean) => {
-    if (!isExpand) {
-      setIsExpandOnHover(value);
-    }
-  };
+  // const [isExpand, setIsExpand] = useState(false);
 
   const handleNavigate = (path: string) => {
     setActiveName(path);
   };
+
+  const handleHamburger = () => {
+    handleHoverExpand(false);
+  }
 
   const handleToggle = (name: string) => {
     const rootEl = name.split(".")[0];
@@ -204,7 +199,7 @@ const generateIcon = (icon: IconType) => {
             ) : null}
             <div
               className={`truncate ${
-                isExpand ? "" : isExpandOnHover ? "" : "w-0 h-0 opacity-0"
+                sideMenuIsExpand ? "" : isExpandOnHover ? "" : "w-0 h-0 opacity-0"
               }`}
             >
               {item.title}
@@ -213,7 +208,7 @@ const generateIcon = (icon: IconType) => {
           {"child" in item ? (
             <div
               className={`${
-                isExpand ? "" : isExpandOnHover ? "" : "w-0 h-0 opacity-0"
+                sideMenuIsExpand ? "" : isExpandOnHover ? "" : "w-0 h-0 opacity-0"
               }`}
             >
               <svg
@@ -261,7 +256,7 @@ const generateIcon = (icon: IconType) => {
         "bg-slate-50 border-r border-slate-100 shadow-sm absolute inset-y-0 left-0",
         "duration-300 ease-in-out md:fixed md:translate-x-0",
         `${
-          isExpand
+          sideMenuIsExpand
             ? "bg-slate-50 w-72"
             : isExpandOnHover
             ? "bg-slate-50/70 w-72 backdrop-blur-md"
@@ -270,16 +265,21 @@ const generateIcon = (icon: IconType) => {
       ].join(" ")}
     >
       <button
-        className="absolute z-50 top-16 -right-3 bg-white hover:bg-slate-100 text-slate-500 p-0.5 rounded-full border border-slate-200"
+        onClick={handleHamburger}
+        className="absolute block md:hidden z-50 top-16 w-10 h-10 -right-4 cursor-pointer bg-white  text-slate-500 p-0.5 rounded-full border border-slate-200"
+      >
+        X
+      </button>
+      <button
+        className="absolute hidden md:block z-50 top-16 -right-3 bg-white hover:bg-slate-100 text-slate-500 p-0.5 rounded-full border border-slate-200"
         onClick={() => {
-          setIsExpand(!isExpand);
-          setExpand(!isExpand);
+          toggleSideMenu();
         }}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className={`${
-            isExpand ? "rotate-0" : "rotate-180"
+            sideMenuIsExpand ? "rotate-0" : "rotate-180"
           } transform duration-500 h-4 w-4`}
           viewBox="0 0 20 20"
           fill="currentColor"
@@ -306,7 +306,7 @@ const generateIcon = (icon: IconType) => {
               >
                 <div
                   className={`rounded-full border-4 border-white overflow-hidden duration-300 ${
-                    isExpand
+                    sideMenuIsExpand
                       ? "h-28 w-28"
                       : isExpandOnHover
                       ? "h-28 w-28"
@@ -317,14 +317,14 @@ const generateIcon = (icon: IconType) => {
                 </div>
                 <div
                   className={`text-base font-semibold text-slate-700 mt-3 truncate duration-300 ${
-                    isExpand ? "" : isExpandOnHover ? "" : "w-0 h-0 opacity-0"
+                    sideMenuIsExpand ? "" : isExpandOnHover ? "" : "w-0 h-0 opacity-0"
                   }`}
                 >
                   {username}
                 </div>
                 <div
                   className={`duration-300 text-sm text-slate-500 truncate ${
-                    isExpand ? "" : isExpandOnHover ? "" : "w-0 h-0 opacity-0"
+                    sideMenuIsExpand ? "" : isExpandOnHover ? "" : "w-0 h-0 opacity-0"
                   }`}
                 >
                   {company}
