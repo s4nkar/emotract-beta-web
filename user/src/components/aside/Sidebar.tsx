@@ -254,7 +254,7 @@ const generateIcon = (icon: IconType) => {
       role="navigation"
       className={[
         "bg-slate-50 border-r border-slate-100 shadow-sm absolute inset-y-0 left-0",
-        "duration-300 ease-in-out md:fixed md:translate-x-0",
+        "duration-300 ease-in-out md:fixed md:translate-x-0 dark:bg-custom-dark dark:text-white dark:border-slate-800", 
         `${
           sideMenuIsExpand
             ? "bg-slate-50 w-72"

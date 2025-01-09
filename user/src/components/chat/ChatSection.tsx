@@ -6,7 +6,7 @@ const ChatSection = () => {
 
   
   return (
-    <div className="flex bg-white dark:bg-stone-950 flex-col justify-center items-center w-full pt-0 px-8" style={{ height: "calc(100vh - 5rem)" }}>
+    <div className="flex bg-white dark:bg-custom-dark bg-dark-bg  flex-col justify-center items-center w-full pt-0 px-8 dark:text-white " style={{ height: "calc(100vh - 5rem) " }}>
         {/* Header */}
         <div className="p-4 border-b flex items-center justify-between h-[15%] w-full">
           <div className="flex items-center">
@@ -30,7 +30,7 @@ const ChatSection = () => {
           </div>
         </div>
         {/* Chat Area */}
-         <div className="h-[75%] w-full py-4">
+         <div className="h-[75%] w-full py-4 ">
           <ChatScreen position='left' />
           <ChatScreen position='right' />
          </div>
