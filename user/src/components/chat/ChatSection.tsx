@@ -6,7 +6,7 @@ const ChatSection = () => {
 
   
   return (
-    <div className="flex bg-white dark:bg-custom-dark bg-dark-bg  flex-col justify-center items-center w-full pt-0 px-8 dark:text-white " style={{ height: "calc(100vh - 5rem) " }}>
+    <div className="flex bg-white dark:bg-custom-dark dark:bg-dark-bg  flex-col justify-center items-center w-full pt-0 px-8 dark:text-white " style={{ height: "calc(100vh - 5rem) " }}>
         {/* Header */}
         <div className="p-4 border-b flex items-center justify-between h-[15%] w-full">
           <div className="flex items-center">
