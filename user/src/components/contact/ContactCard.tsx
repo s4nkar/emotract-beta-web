@@ -12,7 +12,7 @@ const ContactCard = ({  message_count = 0 }:ContactCardProps) => {
             />
             <div className="flex-1 mx-4 hidden md:block">
                 <div className="flex justify-between items-center pr-2">
-                    <span className="text-sm capitalize font-semibold text-gray-800 group-focus:text-white text-[.9rem] truncate max-w-20 dark:text-white ">Nicolas Klausssssssssssssss</span>
+                    <span className="text-sm capitalize font-semibold text-gray-800 group-focus:text-white text-[.9rem] truncate max-w-20 dark:text-[#E0E0E0] ">Nicolas Klausssssssssssssss</span>
                     <span className="text-xs text-gray-500 group-focus:text-white dark:text-[#9AA6B2]">18:03</span>
                 </div>
                 <div className="flex justify-between items-center pr-2">

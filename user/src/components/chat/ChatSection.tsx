@@ -16,7 +16,7 @@ const ChatSection = () => {
               className="w-10 h-10 rounded-full"
             />
             <div className="ml-3">
-              <h3 className="text-sm font-semibold text-gray-800 dark:text-gray-200">John Doe</h3>
+              <h3 className="text-sm font-semibold text-gray-800 dark:text-[#E0E0E0]">John Doe</h3>
               <span className="text-green-500 text-xs">Online</span>
             </div>
           </div>
