@@ -8,7 +8,7 @@ const ChatSection = () => {
   return (
     <div className="flex bg-white dark:bg-custom-dark   flex-col justify-center items-center w-full pt-0 px-8 dark:text-white " style={{ height: "calc(100vh - 5rem) " }}>
         {/* Header */}
-        <div className="p-4 border-b-2 dark:border-b dark:border-b-[#2d2d2d] flex items-center justify-between h-[15%] w-full ">
+        <div className="p-4 border-b-2 dark:border-b dark:border-b-[#2d2d2d] flex items-center justify-between h-[10%] w-full ">
           <div className="flex items-center">
             <img
               src="https://pbs.twimg.com/media/E8HSa0aUYAM1_xS.jpg"
@@ -30,7 +30,7 @@ const ChatSection = () => {
           </div>
         </div>
         {/* Chat Area */}
-         <div className="h-[75%] w-full py-4 overflow-y-scroll scrollbar scrollbar-thin scrollbar-thumb-[#f3f4f6] scrollbar-track-[#fff] dark:scrollbar-thumb-[#181c14] dark:scrollbar-track-[#000]">
+         <div className="h-[80%] w-full py-4 overflow-y-scroll scrollbar scrollbar-thin scrollbar-thumb-[#f3f4f6] scrollbar-track-[#fff] dark:scrollbar-thumb-[#181c14] dark:scrollbar-track-[#000]">
           <ChatScreen position='left' />
           <ChatScreen position='right' />
           <ChatScreen position='left' />
