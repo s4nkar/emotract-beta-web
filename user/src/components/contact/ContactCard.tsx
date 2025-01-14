@@ -4,7 +4,7 @@ interface ContactCardProps{
 
 const ContactCard = ({  message_count = 0 }:ContactCardProps) => {
     return (
-        <button className="flex items-center pl-0 md:pl-2 w-full justify-center md:justify-between py-3 aside-bg-horizontaly  dark:hover:bg-[#1F1F1F] group dark:bg-custom-dark dark:text-white ">
+        <button className="flex items-center pl-0 md:pl-2 w-full justify-center md:justify-between py-3 aside-bg-horizontaly hover:bg-[#e8eafd]  dark:hover:bg-[#1F1F1F] group dark:bg-custom-dark dark:text-white focus:bg-[#9a9deb] dark:focus:bg-[#1F1F1F]">
             <img
             src="https://png.pngtree.com/png-clipart/20200224/original/pngtree-cartoon-color-simple-male-avatar-png-image_5230557.jpg"
             alt="Fabindia Limited avatar"
