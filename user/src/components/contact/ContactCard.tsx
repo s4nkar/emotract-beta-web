@@ -10,13 +10,13 @@ const ContactCard = ({  message_count = 0 }:ContactCardProps) => {
             alt="Fabindia Limited avatar"
             className="w-11 h-11 rounded-full object-cover border-white border-2"
             />
-            <div className="flex-1 mx-4 hidden md:block">
-                <div className="flex justify-between items-center pr-2">
-                    <span className="text-sm capitalize font-semibold text-gray-800 group-focus:text-white text-[.9rem] truncate max-w-20 dark:text-[#E0E0E0] ">Nicolas Klausssssssssssssss</span>
+            <div className="flex-1 mx-4 hidden md:block w-[60%]">
+                <div className="flex justify-between items-center">
+                    <span className="text-sm capitalize font-semibold text-gray-800 group-focus:text-white text-[.9rem] truncate max-w-[80%] dark:text-[#E0E0E0] ">Nicolas Klausssssssssssssss</span>
                     <span className="text-xs text-gray-500 group-focus:text-white dark:text-[#9AA6B2]">18:03</span>
                 </div>
-                <div className="flex justify-between items-center pr-2">
-                    <p className="text-sm text-gray-600 group-focus:text-[#e3e3e3] truncate max-w-16 dark:text-[#9AA6B2] ">Wsp guys sssssssssssssssssssssssssssssssssssssssss</p>
+                <div className="flex justify-between items-center ">
+                    <p className="text-sm text-gray-600 group-focus:text-[#e3e3e3] truncate max-w-[90%] dark:text-[#9AA6B2] ">Wsp guys sssssssssssssssssssssssssssssssssssssssss</p>
                     {message_count > 0 && (<span
                         className="w-4 h-4 flex items-center justify-center rounded-full text-[.7rem] p-2"
                         style={{ backgroundColor: "#3B82F6", color: "white" }}
