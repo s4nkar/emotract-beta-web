@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 interface ContactCardProps{
-    id: number;
+    id: string;
     name: string;
     last_message?: string;
     message_count: number;
