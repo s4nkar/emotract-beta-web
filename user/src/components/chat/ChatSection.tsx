@@ -30,7 +30,7 @@ const ChatSection = () => {
           </div>
         </div>
         {/* Chat Area */}
-         <div className="h-[75%] w-full py-4 overflow-y-scroll scrollbar scrollbar-thin scrollbar-thumb-[#e0e1ff] scrollbar-track-[#fff]">
+         <div className="h-[75%] w-full py-4 overflow-y-scroll scrollbar scrollbar-thin scrollbar-thumb-[#f3f4f6] scrollbar-track-[#fff] dark:scrollbar-thumb-[#181c14] dark:scrollbar-track-[#000]">
           <ChatScreen position='left' />
           <ChatScreen position='right' />
           <ChatScreen position='left' />
