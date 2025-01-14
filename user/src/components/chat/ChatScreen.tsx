@@ -7,12 +7,15 @@ interface ChatProps {
 
 const ChatScreen = ({ position }: ChatProps) => {
   const [isChatSubMenuOpen, setIsChatSubMenuOpen] = useState(false);
+  const [isHamburgerVisible, setIsHamburgerVisible] = useState(false);
   return (
     <div
       className={cn(
         position === "right" && "flex-row-reverse",
         "flex items-start gap-2.5 my-4 first:mt-0 last:mb-0"
       )}
+      onMouseEnter={() => setIsHamburgerVisible(true)}
+      onMouseLeave={() => setIsHamburgerVisible(false)}
     >
       <img
         src="https://pbs.twimg.com/media/E8HSa0aUYAM1_xS.jpg"
@@ -37,7 +40,7 @@ const ChatScreen = ({ position }: ChatProps) => {
         </span>
       </div>
       <div
-        className="relative"
+        className={cn(isHamburgerVisible ? 'block' : 'hidden', "relative")}
         onClick={() => setIsChatSubMenuOpen((prev) => !prev)}
       >
         <button

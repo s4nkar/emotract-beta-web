@@ -13,7 +13,7 @@ function Header() {
   };
 
   return (
-    <header className="chat-header w-full h-20 custom-gradient z-0 dark:bg-custom-dark">
+    <header className="chat-header w-full h-20 z-0 dark:bg-custom-dark">
       {/* Search Section */}
       <div className="flex items-center w-[80%] h-20 bg-white dark:bg-custom-dark">
         <Input
@@ -30,8 +30,9 @@ function Header() {
       </div>
 
       {/* Right Section */}
-      <div className="right-section pr-2 md:pr-10 w-[20%] h-20 relative flex justify-end dark:bg-custom-dark">
+      <div className="right-section pr-2 md:pr-10 w-[20%]  h-20 relative flex justify-end bg-header-gradient-light dark:bg-header-gradient-dark">
         <div className="bg-white h-20 w-20 custom-shape absolute left-[-35px] dark:bg-custom-dark"></div>
+        {/* <div className="bg-white h-20 w-20 custom-shape absolute left-[-35px] dark:bg-[#191316]"></div> */}
         <div className="flex justify-center items-center gap-2">
           <div className="h-7 w-7 mr-2 z-10">
             <ModeToggle />
