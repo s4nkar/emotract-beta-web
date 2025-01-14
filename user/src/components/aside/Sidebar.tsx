@@ -148,7 +148,7 @@ const generateIcon = (icon: IconType) => {
     const classesActive = activeName === item.name ? "active" : "";
 
     return (
-      <li key={index} className={index === sidebarStructureBottom.length-1 ? "border-t-2 border-stone-200" : ""}>
+      <li key={index} className={index === sidebarStructureBottom.length-1 ? "border-stone-200 border-t-2 dark:border-t dark:border-t-[#414141]" : ""}>
         <a
           role="button"
           tabIndex={0}
@@ -305,7 +305,7 @@ const generateIcon = (icon: IconType) => {
                 className={`text-center flex flex-col items-center justify-center`}
               >
                 <div
-                  className={`rounded-full border-4 border-white overflow-hidden duration-300 ${
+                  className={`rounded-full border-2 dark:border-stone-400 border-white overflow-hidden duration-300 ${
                     sideMenuIsExpand
                       ? "h-28 w-28"
                       : isExpandOnHover
@@ -316,7 +316,7 @@ const generateIcon = (icon: IconType) => {
                   <img src={profilePic} className="block" alt="" />
                 </div>
                 <div
-                  className={`text-base font-semibold text-slate-700 mt-3 truncate duration-300 ${
+                  className={`text-base font-semibold text-slate-700 dark:text-white mt-3 truncate duration-300 ${
                     sideMenuIsExpand ? "" : isExpandOnHover ? "" : "w-0 h-0 opacity-0"
                   }`}
                 >

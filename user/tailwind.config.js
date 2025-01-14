@@ -16,6 +16,8 @@ module.exports = {
 		// Custom background images
 		backgroundImage: {
 		  'aside-bg-horizontaly': 'linear-gradient(to left, #a4a7ef, #565bcf)', // Horizontal gradient
+		  'header-gradient-light': ' linear-gradient(to right, #565bcf, #a4a7ef)',
+		  'header-gradient-dark': ' linear-gradient(to right, #050205, #393E46)',
 		  'dark-bg': `
 			radial-gradient(at 0% 100%, hsla(204, 11%, 21%, 1) 0px, transparent 50%),
 			radial-gradient(at 84% 100%, hsla(333, 11%, 21%, 1) 0px, transparent 50%)
@@ -42,6 +44,7 @@ module.exports = {
 	},
 	plugins: [
 	  require("tailwindcss-animate"), // Adds animation utilities
+	  require('tailwind-scrollbar'),
 	],
   };
   
