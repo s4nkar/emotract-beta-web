@@ -24,38 +24,47 @@
         --sidebar-ring: 217.2 91.2% 59.8%;
     }
 }
-
-.aside-bg{
-    background: linear-gradient(#565bcf, #a4a7ef);
-  }
-  
-  .contact-list-bg{
-    background: #e0e1ff;
-  }
-
-.custom-scroll-contact-card::-webkit-scrollbar{
-    width: 5px !important;
-  }
-.custom-scroll-contact-card::-webkit-scrollbar-thumb{
-    background: #c6c2e8;
-    width: 5px;
-    border-radius: 4px;
-  }
-
-.custom-scroll-contact-card::-webkit-scrollbar-track{
-    background: #e0e1ff;
-    width: 5px;
-  }
-
-.aside-bg-horizontaly:focus{
-  background: linear-gradient(to left, #a4a7ef, #565bcf);
-}
-
-
-.custom-scroll-chat-section::-webkit-scrollbar{
+/* Existing styles for normal mode */
+.custom-scroll-contact-card::-webkit-scrollbar {
   width: 5px !important;
 }
-.custom-scroll-chat-section::-webkit-scrollbar-thumb{
+
+.custom-scroll-contact-card::-webkit-scrollbar-thumb {
+  background: #c6c2e8;
+  width: 5px;
+  border-radius: 4px;
+}
+
+.custom-scroll-contact-card::-webkit-scrollbar-track {
+  background: #e0e1ff;
+  width: 5px;
+}
+
+/* Dark mode styles for custom scrollbar */
+@media (prefers-color-scheme: dark) {
+  .custom-scroll-contact-card::-webkit-scrollbar-thumb {
+    background: #808080; /* grey color */
+  }
+
+  .custom-scroll-contact-card::-webkit-scrollbar-track {
+    background: #333333; /* dark background for track */
+  }
+
+  .custom-scroll-chat-section::-webkit-scrollbar-thumb {
+    background: #808080; /* grey color */
+  }
+
+  .custom-scroll-chat-section::-webkit-scrollbar-track {
+    background: #333333; /* dark background for track */
+  }
+}
+
+/* Existing styles for chat section */
+.custom-scroll-chat-section::-webkit-scrollbar {
+  width: 5px !important;
+}
+
+.custom-scroll-chat-section::-webkit-scrollbar-thumb {
   background: #e3e3e3;
   width: 5px;
   border-radius: 4px;

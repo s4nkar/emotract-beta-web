@@ -7,7 +7,7 @@ const Aside = () => {
 
   return (
     <div 
-      className={cn(!isExpandOnHover && "hidden", "relative min-h-screen md:flex z-10")}
+      className={cn(!isExpandOnHover && "hidden", "relative min-h-screen md:flex z-10 ")}
     >
       {/* sidemenu */}
       <Sidebar/>
