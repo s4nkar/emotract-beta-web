@@ -3,40 +3,33 @@ import { Input } from "../ui/input";
 import ChatScreen from "./ChatScreen";
 
 interface chatSectionProps{
-  id: number;
+  id?: string;
 }
 
-interface ContactDataType{
-  id: number;
-  name: string;
-  last_message?: string;
-  message_count: number;
-  time: string,
-}
-const contactData:ContactDataType[] = [
+const contactData = [
   {
-    id: 1,
+    id: '1',
     name: 'Amal',
     last_message: 'See you soon!',
     message_count: 10,
     time: '18:03',
   },
   {
-    id: 2,
+    id: '2',
     name: 'Sankar',
     last_message: 'wsp',
     message_count: 2,
     time: '18:03',
   },
   {
-    id: 3,
+    id: '3',
     name: 'Ansari',
     last_message: 'erachi veno',
     message_count: 0,
     time: '18:03',
   },
   {
-    id: 4,
+    id: '4',
     name: 'Lison',
     last_message: 'test message',
     message_count: 7,
@@ -50,7 +43,7 @@ const ChatSection = ({
 chatSectionProps
 ) => {
 
-  const [ userProfile ] = contactData.filter((data) => id == data.id);
+  const [ userProfile ] = contactData.filter((data) => id === data.id);
 
   return (
     <div className="flex bg-white dark:bg-custom-dark   flex-col justify-center items-center w-full pt-0 px-8 dark:text-white " style={{ height: "calc(100vh - 5rem) " }}>
