@@ -2,9 +2,56 @@ import { Phone, SendHorizonal, Smile, Video } from "lucide-react";
 import { Input } from "../ui/input";
 import ChatScreen from "./ChatScreen";
 
-const ChatSection = () => {
+interface chatSectionProps{
+  id: number;
+}
 
-  
+interface ContactDataType{
+  id: number;
+  name: string;
+  last_message?: string;
+  message_count: number;
+  time: string,
+}
+const contactData:ContactDataType[] = [
+  {
+    id: 1,
+    name: 'Amal',
+    last_message: 'See you soon!',
+    message_count: 10,
+    time: '18:03',
+  },
+  {
+    id: 2,
+    name: 'Sankar',
+    last_message: 'wsp',
+    message_count: 2,
+    time: '18:03',
+  },
+  {
+    id: 3,
+    name: 'Ansari',
+    last_message: 'erachi veno',
+    message_count: 0,
+    time: '18:03',
+  },
+  {
+    id: 4,
+    name: 'Lison',
+    last_message: 'test message',
+    message_count: 7,
+    time: '18:03',
+  },
+]
+
+const ChatSection = ({
+  id
+}:
+chatSectionProps
+) => {
+
+  const [ userProfile ] = contactData.filter((data) => id == data.id);
+
   return (
     <div className="flex bg-white dark:bg-custom-dark   flex-col justify-center items-center w-full pt-0 px-8 dark:text-white " style={{ height: "calc(100vh - 5rem) " }}>
         {/* Header */}
@@ -16,7 +63,7 @@ const ChatSection = () => {
               className="w-10 h-10 rounded-full"
             />
             <div className="ml-3">
-              <h3 className="text-sm font-semibold text-gray-800 dark:text-[#E0E0E0]">John Doe</h3>
+              <h3 className="text-sm font-semibold text-gray-800 dark:text-[#E0E0E0]">{userProfile?.name}</h3>
               <span className="text-green-500 text-xs">Online</span>
             </div>
           </div>

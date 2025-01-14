@@ -20,7 +20,7 @@ export default function App() {
         <Route path="*" element={<NotFound />} />
 
         {/* Group Protected Routes */}
-          <Route path="home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+          <Route path="home/:id" element={<ProtectedRoute><Home /></ProtectedRoute>} />
           <Route path="user-profile" element={<ProtectedRoute><UserProfilePage /></ProtectedRoute>} />
 
       </Routes>

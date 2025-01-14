@@ -2,8 +2,11 @@ import Header from "@/components/header/Header";
 import Aside  from "../components/aside/Aside";
 import ContactList from "@/components/contact/ContactList";
 import ChatSection from "@/components/chat/ChatSection";
+import { useParams } from "react-router-dom";
 
 const Home = () => {
+  const { id } = useParams();
+
   return (
     <div className="w-full h-screen flex">
       <Aside />
@@ -11,7 +14,7 @@ const Home = () => {
       <Header/>
       <div className='flex'>
         <ContactList/>
-        <ChatSection/>
+        <ChatSection id={id}/>
       </div>
     </div>
     </div>
