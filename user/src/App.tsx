@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import NotFound from "./components/not-found";
 import UserProfilePage from "./components/user-profile";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
+import ContactListSm from "./pages/contact/ContactListSm";
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
 
         {/* Group Protected Routes */}
           <Route path="home/:id" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+          <Route path="/chat-list" element={<ProtectedRoute><ContactListSm/></ProtectedRoute>} />
           <Route path="user-profile" element={<ProtectedRoute><UserProfilePage /></ProtectedRoute>} />
 
       </Routes>
