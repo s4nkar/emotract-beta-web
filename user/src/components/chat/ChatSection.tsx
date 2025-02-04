@@ -1,6 +1,8 @@
-import { Phone, SendHorizonal, Smile, Video } from "lucide-react";
+import { Phone, SendHorizonal, Smile, Video, ChevronLeft } from "lucide-react";
 import { Input } from "../ui/input";
 import ChatScreen from "./ChatScreen";
+import { Button } from "../ui/button";
+import { Link } from "react-router-dom";
 
 interface chatSectionProps{
   id?: string;
@@ -48,8 +50,11 @@ chatSectionProps
   return (
     <div className="flex bg-white dark:bg-custom-dark   flex-col justify-center items-center w-full pt-0 px-8 dark:text-white " style={{ height: "calc(100vh - 5rem) " }}>
         {/* Header */}
-        <div className="p-4 border-b-2 dark:border-b dark:border-b-[#2d2d2d] flex items-center justify-between h-[10%] w-full ">
+        <div className="p-4 border-b-2 dark:border-b dark:border-b-[#2d2d2d] relative flex items-center justify-between h-[10%] w-full ">
           <div className="flex items-center">
+            <Link to="/chat-list" className="bg-red-400 p-0 flex justify-center items-center md:hidden">
+              <ChevronLeft className="absolute -left-4 text-gray-600 cursor-pointer"/>
+            </Link>
             <img
               src="https://pbs.twimg.com/media/E8HSa0aUYAM1_xS.jpg"
               alt="User Avatar"
@@ -70,7 +75,7 @@ chatSectionProps
           </div>
         </div>
         {/* Chat Area */}
-         <div className="h-[80%] w-full py-4 overflow-y-scroll scrollbar scrollbar-thin scrollbar-thumb-[#f3f4f6] scrollbar-track-[#fff] dark:scrollbar-thumb-[#181c14] dark:scrollbar-track-[#000]">
+         <div className="h-[80%] w-full py-4 overflow-y-scroll  scrollbar-thin scrollbar-thumb-[#f3f4f6] scrollbar-track-[#fff] dark:scrollbar-thumb-[#181c14] dark:scrollbar-track-[#000]">
           <ChatScreen position='left' />
           <ChatScreen position='right' />
           <ChatScreen position='left' />
