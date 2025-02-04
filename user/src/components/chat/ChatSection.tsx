@@ -1,7 +1,6 @@
 import { Phone, SendHorizonal, Smile, Video, ChevronLeft } from "lucide-react";
 import { Input } from "../ui/input";
 import ChatScreen from "./ChatScreen";
-import { Button } from "../ui/button";
 import { Link } from "react-router-dom";
 
 interface chatSectionProps{
@@ -52,8 +51,8 @@ chatSectionProps
         {/* Header */}
         <div className="p-4 border-b-2 dark:border-b dark:border-b-[#2d2d2d] relative flex items-center justify-between h-[10%] w-full ">
           <div className="flex items-center">
-            <Link to="/chat-list" className="bg-red-400 p-0 flex justify-center items-center md:hidden">
-              <ChevronLeft className="absolute -left-4 text-gray-600 cursor-pointer"/>
+            <Link to="/chat-list" className="p-0 flex justify-center items-center md:hidden absolute -left-4">
+              <ChevronLeft className=" text-gray-600 cursor-pointer"/>
             </Link>
             <img
               src="https://pbs.twimg.com/media/E8HSa0aUYAM1_xS.jpg"
