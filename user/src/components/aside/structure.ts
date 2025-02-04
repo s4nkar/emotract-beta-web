@@ -50,7 +50,7 @@ const sidebarStructure:SidebarItemProps[]  = [
       name: "Chats",
       parent: true,
       icon: MessageCircleIcon,
-      link: "/Chats",
+      link: "/chat-list",
       height:"0px"
     },
     {

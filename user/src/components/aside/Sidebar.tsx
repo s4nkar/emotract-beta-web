@@ -3,10 +3,11 @@ import SimpleBar from "simplebar-react";
 import "simplebar-react/dist/simplebar.min.css";
 import { sidebarStructure, sidebarStructureBottom } from "@/components/aside/structure";
 import { useClerk } from "@clerk/clerk-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { LucideProps } from "lucide-react";
 import React, { ForwardRefExoticComponent, RefAttributes } from 'react';
 import { useToggle } from '@/hooks/useToggle';
+import { cn } from "@/lib/utils";
 
 
 interface MenuState {
@@ -31,7 +32,7 @@ interface SidebarItemProps{
 const Sidebar: FC = () => {
   const { toggleSideMenu, handleHoverExpand, isExpandOnHover, sideMenuIsExpand } = useToggle();
   const { user }= useClerk();
-
+  const navigate = useNavigate();
 
   const username = user?.fullName;
   const company = "Online";
@@ -45,6 +46,11 @@ const Sidebar: FC = () => {
   const listRef = useRef<Record<string, HTMLUListElement | null>>({});
 
   // const [isExpand, setIsExpand] = useState(false);
+
+  const handleSideLink = (link: string) => {
+    handleHoverExpand(false);
+    navigate(link);
+  }
 
   const handleNavigate = (path: string) => {
     setActiveName(path);
@@ -148,7 +154,13 @@ const generateIcon = (icon: IconType) => {
     const classesActive = activeName === item.name ? "active" : "";
 
     return (
-      <li key={index} className={index === sidebarStructureBottom.length-1 ? "border-stone-200 border-t-2 dark:border-t dark:border-t-[#414141]" : ""}>
+      <li 
+        onClick={() => handleSideLink(item.link)} 
+        key={index} 
+        className={cn(
+        index === sidebarStructureBottom.length-1 ? "border-stone-200 border-t-2 dark:border-t dark:border-t-[#414141] " : "", 
+        item.title === "Chats" && "block md:hidden"
+      )}>
         <a
           role="button"
           tabIndex={0}
