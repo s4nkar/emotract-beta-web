@@ -49,7 +49,7 @@ const SignIn = () => {
           Emotract is a cutting-edge chat application that combines seamless communication with advanced AI features.
           </p>
           <span className="bg-white hover:bg-white text-black w-20 cursor-pointer text-center p-2 rounded-lg">
-            <SignInButton mode="modal" forceRedirectUrl="/home" />
+            <SignInButton mode="modal" forceRedirectUrl="/home/0" />
           </span>
         </div>
       </div>
