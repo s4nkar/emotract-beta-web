@@ -5,7 +5,8 @@ docker-compose down
 user: http://localhost:5173
 admin: http://localhost:5174
 backend: http://localhost:8000/
-db: http://localhost:8080/
+db mysql: http://localhost:8080/    currently not available
+db postrgresql: https://console.neon.tech/app/projects/lucky-mouse-29317073/branches/br-blue-pine-a11etjdr/tables?database=neondb
 
 cd server
 py -m venv venv 
@@ -46,3 +47,15 @@ ps aux | grep vite
 pip freeze > requirements.txt
 
 git reflog
+
+mysql 
+DATABASES = { 
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'emotract',
+        'USER': 'root',
+        'PASSWORD': 'NLP_emotract',
+        'HOST': 'db',
+        'PORT': '3306',
+    }
+}
