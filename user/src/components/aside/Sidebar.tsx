@@ -47,9 +47,14 @@ const Sidebar: FC = () => {
 
   // const [isExpand, setIsExpand] = useState(false);
 
-  const handleSideLink = (link: string) => {
+  const handleSideLink = (link: string, name:string) => {
     handleHoverExpand(false);
-    navigate(link);
+
+    if (window.innerWidth > 640 && name === 'Chats') {  
+      navigate('/home/0');
+    } else {
+      navigate(link);
+    }
   }
 
   const handleNavigate = (path: string) => {
@@ -155,11 +160,11 @@ const generateIcon = (icon: IconType) => {
 
     return (
       <li 
-        onClick={() => handleSideLink(item.link)} 
+        onClick={() => handleSideLink(item.link, item.name)} 
         key={index} 
         className={cn(
         index === sidebarStructureBottom.length-1 ? "border-stone-200 border-t-2 dark:border-t dark:border-t-[#414141] " : "", 
-        item.title === "Chats" && "block md:hidden"
+        // item.title === "Chats" && "block md:hidden"
       )}>
         <a
           role="button"
