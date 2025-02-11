@@ -5,7 +5,7 @@ docker-compose down
 user: http://localhost:5173
 admin: http://localhost:5174
 backend: http://localhost:8000/
-db mysql: http://localhost:8080/    currently not available
+db mysql: http://localhost:8080/    
 db postrgresql: https://console.neon.tech/app/projects/lucky-mouse-29317073/branches/br-blue-pine-a11etjdr/tables?database=neondb
 
 cd server
@@ -57,5 +57,17 @@ DATABASES = {
         'PASSWORD': 'NLP_emotract',
         'HOST': 'db',
         'PORT': '3306',
+    }
+}
+
+postgresql
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': tmpPostgres.path.replace('/', ''),
+        'USER': tmpPostgres.username,
+        'PASSWORD': tmpPostgres.password,
+        'HOST': tmpPostgres.hostname,
+        'PORT': 5432,
     }
 }
