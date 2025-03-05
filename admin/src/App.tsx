@@ -14,7 +14,7 @@ const App = () => {
 
         {/* Main Content Area */}
         <div
-          style={{ width: "calc(100vw - 18rem)" }}
+          style={{ width: "calc(100vw - 10rem)" }}
           className="flex flex-col flex-1"
         >
           <Routes>
