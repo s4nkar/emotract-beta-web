@@ -23,20 +23,20 @@ const Sidebar = () => {
           </Link>
         </li>
         <li>
-          <a
-            href="#"
+          <Link
+            to="/analytics/0"
             className="flex items-center gap-2 text-gray-700 hover:text-blue-500 cursor-pointer"
           >
-            <FaBox /> UI Components
-          </a>
+            <FaBox /> Analytics
+          </Link>
         </li>
         <li>
-          <a
-            href="#"
+          <Link
+            to="/settings"
             className="flex items-center gap-2 text-gray-700 hover:text-blue-500 cursor-pointer"
           >
             <FaCog /> Settings
-          </a>
+          </Link>
         </li>
       </ul>
     </div>
