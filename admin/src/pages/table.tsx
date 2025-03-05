@@ -431,6 +431,7 @@ export const columns: ColumnDef<Payment>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className=" dark:bg-custom-dark dark:text-white"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -521,7 +522,7 @@ export function DataTableDemo() {
   });
 
   return (
-    <div className="w-full max-h-screen p-4">
+    <div className="w-full max-h-screen p-4 dark:bg-custom-dark dark:text-white">
       <div className="flex items-center py-4">
         <Input
           placeholder="Filter emails..."
