@@ -19,7 +19,7 @@ const data = [
 
 const ChartComponent = () => {
   return (
-    <div className="bg-white p-4 shadow-md rounded-lg">
+    <div className="bg-white dark:bg-custom-dark dark:text-[#E0E0E0] p-4 shadow-md rounded-lg">
       <h3 className="text-lg font-bold">Traffic Sources</h3>
       <BarChart width={600} height={300} data={data}>
         <CartesianGrid strokeDasharray="3 3" />
