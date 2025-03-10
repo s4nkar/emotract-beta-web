@@ -7,7 +7,7 @@ const Dashboard = () => {
   return (
     <div
       style={{ width: "calc(100vw - 16rem)" }}
-      className="flex flex-col flex-1 p-4"
+      className="flex flex-col flex-1 p-4 "
     >
       <DashboardHeader />
 
