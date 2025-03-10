@@ -2,6 +2,10 @@ import { Phone, SendHorizonal, Smile, Video, ChevronLeft } from "lucide-react";
 import { Input } from "../ui/input";
 import ChatScreen from "./ChatScreen";
 import { Link } from "react-router-dom";
+import Voicemessage from "./Voicemessage";
+import PdfFile from "./PdfFile";
+import VideoMessage from "./VideoMessage";
+import ImageMessage from "./ImageMessage";
 
 interface chatSectionProps {
   id?: string;
@@ -78,6 +82,13 @@ const ChatSection = ({ id }: chatSectionProps) => {
       {/* Chat Area */}
       <div className="h-[80%] w-full py-4 overflow-y-scroll scrollbar-thin scrollbar-thumb-[#f3f4f6] scrollbar-track-[#fff] dark:scrollbar-thumb-[#181c14] dark:scrollbar-track-[#000] flex flex-col">
         <ChatScreen position="left" />
+        <Voicemessage/>
+        <br />
+        <PdfFile/>
+        <br />
+        <VideoMessage/>
+        <br />
+       <ImageMessage/>
         <ChatScreen position="right" />
         <ChatScreen position="left" />
         <ChatScreen position="right" />
