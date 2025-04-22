@@ -1,79 +1,3 @@
-// import { useNavigate } from "react-router-dom";
-
-// const UserList = () => {
-//   const navigate = useNavigate();
-//   const users = [
-//     { id: 1, name: "John Doe", email: "john@example.com", role: "Admin" },
-//     { id: 2, name: "Jane Smith", email: "jane@example.com", role: "User" },
-//     { id: 3, name: "Mike Johnson", email: "mike@example.com", role: "User" },
-//   ];
-
-//   const handleDelete = (id: number) => {
-//     // http request to backend for delete the user
-//     console.log("Deleted", id);
-//   };
-
-//   const handleBlock = (id: number) => {
-//     // http request to backend for Blocking the user
-//     console.log("Blocked", id);
-//   };
-
-//   const viewAnalytics = (id: number) => {
-//     // http request to backend to view Analytics of the user
-//     navigate(`/analytics/${id}`);
-//   };
-
-//   return (
-//     <div className="p-4">
-//       <h2 className="text-xl font-bold mb-4">User List</h2>
-//       <div className="overflow-x-auto">
-//         <table className="w-full border border-gray-300">
-//           <thead>
-//             <tr className="bg-gray-200">
-//               <th className="p-2 border">ID</th>
-//               <th className="p-2 border">Name</th>
-//               <th className="p-2 border">Email</th>
-//               <th className="p-2 border">Role</th>
-//               <th className="p-2 border">Actions</th>
-//             </tr>
-//           </thead>
-//           <tbody>
-//             {users.map((user, i) => (
-//               <tr key={user.id} className="text-center border">
-//                 <td className="p-2 border">{i + 1}</td>
-//                 <td className="p-2 border">{user.name}</td>
-//                 <td className="p-2 border">{user.email}</td>
-//                 <td className="p-2 border">{user.role}</td>
-//                 <td className="p-2 border flex justify-center gap-2">
-//                   <button
-//                     onClick={() => handleDelete(user.id)}
-//                     className="px-2 py-1 bg-red-500 text-white rounded"
-//                   >
-//                     Delete
-//                   </button>
-//                   <button
-//                     onClick={() => handleBlock(user.id)}
-//                     className="px-2 py-1 bg-yellow-500 text-white rounded"
-//                   >
-//                     Block
-//                   </button>
-//                   <button
-//                     onClick={() => viewAnalytics(user.id)}
-//                     className="px-2 py-1 bg-blue-500 text-white rounded"
-//                   >
-//                     Analytics
-//                   </button>
-//                 </td>
-//               </tr>
-//             ))}
-//           </tbody>
-//         </table>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default UserList;
 "use client";
 
 import * as React from "react";
@@ -111,366 +35,85 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { useNavigate } from "react-router-dom";
 
-const data: Payment[] = [
+const data: UserData[] = [
   {
     id: "m5gr84i9",
-    amount: 316,
-    status: "success",
+    "screen-time": 16,
+    status: "blocked",
     email: "ken99@example.com",
   },
   {
     id: "3u1reuv4",
-    amount: 242,
-    status: "success",
+    "screen-time": 22,
+    status: "active",
     email: "Abe45@example.com",
   },
   {
     id: "derv1ws0",
-    amount: 837,
-    status: "processing",
+    "screen-time": 37,
+    status: "blocked",
     email: "Monserrat44@example.com",
   },
   {
     id: "derv1ws0",
-    amount: 837,
-    status: "processing",
+    "screen-time": 87,
+    status: "active",
     email: "Monserrat44@example.com",
   },
   {
     id: "derv1ws0",
-    amount: 837,
-    status: "processing",
+    "screen-time": 27,
+    status: "active",
     email: "Monserrat44@example.com",
   },
   {
     id: "derv1ws0",
-    amount: 837,
-    status: "processing",
+    "screen-time": 97,
+    status: "active",
     email: "Monserrat44@example.com",
   },
   {
     id: "derv1ws0",
-    amount: 837,
-    status: "processing",
+    "screen-time": 47,
+    status: "blocked",
     email: "Monserrat44@example.com",
   },
   {
     id: "derv1ws0",
-    amount: 837,
-    status: "processing",
+    "screen-time": 87,
+    status: "blocked",
     email: "Monserrat44@example.com",
   },
   {
     id: "derv1ws0",
-    amount: 837,
-    status: "processing",
+    "screen-time": 88,
+    status: "blocked",
     email: "Monserrat44@example.com",
   },
   {
     id: "derv1ws0",
-    amount: 837,
-    status: "processing",
+    "screen-time": 87,
+    status: "active",
     email: "Monserrat44@example.com",
   },
   {
     id: "derv1ws0",
-    amount: 837,
-    status: "processing",
+    "screen-time": 37,
+    status: "active",
     email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "5kma53ae",
-    amount: 874,
-    status: "success",
-    email: "Silas22@example.com",
-  },
-  {
-    id: "bhqecj4p",
-    amount: 721,
-    status: "failed",
-    email: "carmella@example.com",
   },
 ];
 
-export type Payment = {
+export type UserData = {
   id: string;
-  amount: number;
-  status: "pending" | "processing" | "success" | "failed";
+  "screen-time": number;
+  status: "active" | "blocked";
   email: string;
 };
 
-export const columns: ColumnDef<Payment>[] = [
+export const columns: ColumnDef<UserData>[] = [
   {
     id: "select",
     header: ({ table }) => (
@@ -519,25 +162,20 @@ export const columns: ColumnDef<Payment>[] = [
     cell: ({ row }) => <div className="lowercase">{row.getValue("email")}</div>,
   },
   {
-    accessorKey: "amount",
-    header: () => <div className="text-right">Amount</div>,
+    accessorKey: "screen-time",
+    header: () => <div>Screen Time</div>,
     cell: ({ row }) => {
-      const amount = parseFloat(row.getValue("amount"));
+      const screenTime = parseFloat(row.getValue("screen-time"));
 
-      // Format the amount as a dollar amount
-      const formatted = new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "USD",
-      }).format(amount);
-
-      return <div className="text-right font-medium">{formatted}</div>;
+      return <div className="font-medium">{screenTime}</div>;
     },
   },
   {
     id: "actions",
     enableHiding: false,
     cell: ({ row }) => {
-      const payment = row.original;
+      const userData = row.original;
+      const navigate = useNavigate();
 
       return (
         <DropdownMenu>
@@ -550,13 +188,13 @@ export const columns: ColumnDef<Payment>[] = [
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
             <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(payment.id)}
+              onClick={() => navigate(`/analytics/${userData.id}`)}
             >
-              Copy payment ID
+              View Analytics
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View payment details</DropdownMenuItem>
+            <DropdownMenuItem>Block</DropdownMenuItem>
+            <DropdownMenuItem>Delete</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       );

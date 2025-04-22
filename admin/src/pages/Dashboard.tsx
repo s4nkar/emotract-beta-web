@@ -1,7 +1,6 @@
 import DashboardHeader from "../components/DashboardHeader";
 import StatsCard from "../components/StatsCard";
-import ChartComponent from "../components/ChartComponent";
-import ProgressCircle from "../components/ProgressCircle";
+import { ChartComponent } from "@/components/ChartComponent";
 
 const Dashboard = () => {
   return (
@@ -38,14 +37,11 @@ const Dashboard = () => {
           color="text-green-500"
         />
       </div>
-
+      <hr />
       {/* Chart and Progress */}
       <div className="flex flex-wrap mt-6 gap-4">
         <div className="flex-1 min-w-[60%]">
           <ChartComponent />
-        </div>
-        <div className="flex flex-col items-center justify-center w-1/3 min-w-[250px]">
-          <ProgressCircle percent={75} />
         </div>
       </div>
     </div>
