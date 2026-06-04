@@ -1,27 +1,8 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 const VideoMessage = () => {
-  const videoRef = useRef(null);
-  const [isMuted, setIsMuted] = useState(true);
-
-  // Toggle mute/unmute
-  const toggleMute = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !videoRef.current.muted;
-      setIsMuted(videoRef.current.muted);
-    }
-  };
-
-  // Toggle fullscreen
-  const toggleFullScreen = () => {
-    if (videoRef.current) {
-      if (videoRef.current.requestFullscreen) {
-        videoRef.current.requestFullscreen();
-      } else if (videoRef.current.webkitRequestFullscreen) {
-        videoRef.current.webkitRequestFullscreen();
-      }
-    }
-  };
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isMuted] = useState(true);
 
   return (
     <div className="flex items-start gap-2.5 w-full max-w-[320px]">

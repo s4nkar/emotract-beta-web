@@ -1,4 +1,4 @@
-const ProgressCircle = ({ percent }) => {
+const ProgressCircle = ({ percent }: { percent: number }) => {
   return (
     <div className="bg-white dark:bg-custom-dark dark:text-[#E0E0E0] p-4 shadow-md rounded-lg flex flex-col items-center">
       <h3 className="text-lg font-bold">Income</h3>

@@ -1,6 +1,13 @@
 import PropTypes from "prop-types";
 
-const StatsCard = ({ title, value, percentage, color }) => {
+interface StatsCardProps {
+  title: string;
+  value: string | number;
+  percentage?: string;
+  color?: string;
+}
+
+const StatsCard = ({ title, value, percentage, color }: StatsCardProps) => {
   // Function to determine percentage color dynamically
   const getPercentageColor = () => {
     if (!percentage) return "text-gray-500";

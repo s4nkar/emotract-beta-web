@@ -1,16 +1,16 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 
 function PdfFile() {
   // useState hook to manage the visibility of the dropdown menu
   const [showDropdown, setShowDropdown] = useState(false);
 
   // useRef hook to create a reference to the dropdown element, used for click outside detection
-  const dropdownRef = useRef(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Function to handle clicks outside the dropdown, closing it if a click occurs outside
-  const handleClickOutside = (event) => {
+  const handleClickOutside = (event: MouseEvent) => {
     // Check if the dropdownRef exists and if the click target is not within the dropdown
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
       // Set the showDropdown state to false, closing the dropdown
       setShowDropdown(false);
     }

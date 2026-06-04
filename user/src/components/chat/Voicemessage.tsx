@@ -1,9 +1,9 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef, ChangeEvent } from "react";
 
 const MessageBubble = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
-  const audioRef = useRef(null);
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   const togglePlayPause = () => {
     if (audioRef.current) {
@@ -16,16 +16,21 @@ const MessageBubble = () => {
     }
   };
 
-  const handleSeek = (e) => {
-    const newTime = (e.target.value * audioRef.current.duration) / 100;
-    audioRef.current.currentTime = newTime;
-    setProgress(e.target.value);
+  const handleSeek = (e: ChangeEvent<HTMLInputElement>) => {
+    if (audioRef.current) {
+      const val = parseFloat(e.target.value);
+      const newTime = (val * audioRef.current.duration) / 100;
+      audioRef.current.currentTime = newTime;
+      setProgress(val);
+    }
   };
 
   const handleTimeUpdate = () => {
-    const currentProgress =
-      (audioRef.current.currentTime / audioRef.current.duration) * 100;
-    setProgress(currentProgress);
+    if (audioRef.current) {
+      const currentProgress =
+        (audioRef.current.currentTime / audioRef.current.duration) * 100;
+      setProgress(currentProgress);
+    }
   };
 
   return (

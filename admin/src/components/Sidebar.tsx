@@ -1,6 +1,5 @@
 import { FaChartPie, FaBox, FaUsers, FaCog } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { ModeToggle } from "./mode-toggle";
 
 const Sidebar = () => {
   return (
