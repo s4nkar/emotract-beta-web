@@ -42,3 +42,4 @@ ENV.bak/
 *.cache
 
 .codegpt
+node_modules/
